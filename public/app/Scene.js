@@ -27,6 +27,7 @@ class Scene {
 
     constructor() {
         this.init();
+        this.build();
     }
 
     init () {
@@ -34,6 +35,13 @@ class Scene {
         .setLimits(this.buildLimits()) 
         .setFond(this.buildFond());
     }
+
+    build() {
+        let conteneur = this.getConteneur();
+        conteneur.setAttribute('class', this.getFond());
+        conteneur.setAttribute('style', 'width:' + this.getLimits().x +'; height:' + this.getLimits().y);
+    }
+
 
     buildConteneur() {
         let conteneur  = document.createElement('div');
@@ -43,8 +51,8 @@ class Scene {
 
     buildLimits() {
         return {
-            x : '100%',
-            y : '100%'
+            x : '100vw',
+            y : '100vh'
         }
     }
 
