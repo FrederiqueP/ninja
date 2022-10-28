@@ -2,12 +2,12 @@
 
 class App {
 
-    getScene(){
-        return this.scene;
+    getElement(){
+        return this.element;
     }
 
-    setScene(scene) {
-        this.scene = scene;
+    setElement(element) {
+        this.element = element;
         return this;
     }
 
@@ -15,9 +15,62 @@ class App {
         this.init();
     }
 
+
     init() {
-        // objet scene avec ()
-        this.setScene(new Scene());
+        this.setElement(
+            new Element(
+            {
+                x : '100vw',
+                y : '100vh'
+            },
+            'foret',
+            {
+                x : '0',
+                y : '0'
+            }
+        )
+        ).addEnfant (
+            new Element (
+                {
+                    x : '25vw',
+                    y : '25vh'
+                },
+                'foret',
+                {
+                    x : '100px',
+                    y : '100px'
+                }
+
+            )
+
+        ).addEnfant (
+            new Element (
+                {
+                    x : '25vw',
+                    y : '25vh'
+                },
+                'foret',
+                {
+                    x : '200px',
+                    y : '200px'
+                }
+
+            )
+        ).addEnfant (
+            new Element (
+                {
+                    x : '30vw',
+                    y : '30vh'
+                },
+                'foret',
+                {
+                    x : '500px',
+                    y : '700px'
+                }
+            )
+        )
+        ;
     }
     
+
 }
