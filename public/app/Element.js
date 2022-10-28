@@ -41,7 +41,7 @@ class Element {
         return this;
     }
     addEnfant(enfant) {
-        this.getEnfants.push(enfant);
+        this.getEnfants().push(enfant);
         this.getConteneur().appendChild(enfant.getConteneur());
         return this;
     }

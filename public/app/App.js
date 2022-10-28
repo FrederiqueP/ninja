@@ -8,7 +8,7 @@ class App {
 
     setElement(element) {
         this.element = element;
-        return this;
+        return element;
     }
 
     constructor (){
@@ -29,7 +29,7 @@ class App {
                 y : '0'
             }
         )
-        ).addEnfant (
+        ).addEnfant(
             new Element (
                 {
                     x : '25vw',
@@ -43,7 +43,7 @@ class App {
 
             )
 
-        ).addEnfant (
+        ).addEnfant(
             new Element (
                 {
                     x : '25vw',
@@ -56,7 +56,7 @@ class App {
                 }
 
             )
-        ).addEnfant (
+        ).addEnfant(
             new Element (
                 {
                     x : '30vw',
