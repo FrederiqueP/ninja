@@ -47,28 +47,36 @@ class Element {
     }
 
 
-    constructor(limits, fond, position, enfants) {
-        this.init(limits, fond, position, enfants);
+    getEvents() {
+        return this.events;
+    }
+    setEvents(events) {
+        this.events = events;
+        return this;
+    }
+
+
+    constructor(limits, fond, position, enfants, events) {
+        this.init(limits, fond, position, enfants, events);
         this.build();
     }
 
-    init (limits, fond, position) {
+    init (limits, fond, position, enfants, events) {
         this.setConteneur(this.buildConteneur())
         .setLimits( limits ? limits : this.buildLimits()) 
         .setFond(fond ? fond : this.buildFond())
         .setPosition( position ? position : this.buildPosition())
-        .setEnfants([]);
-        
+        .setEnfants([])
+        .setEvents(events ? events : []);
 
     }
 
     build() {
        this.getConteneur()
         .setAtr('class', this.getFond())
-        .setAtr('style', this.buildLimitsCSS() + this.buildPositionCss())
+        .setAtr('style', this.buildLimitsCss() + this.buildPositionCss())
+        .attachEvents(this.getEvents(),this)
         .parentNode.setAtr('style', 'position:relative');
-        
-        
     }
 
 
@@ -87,7 +95,7 @@ class Element {
         return 'foret';
     }
 
-    buildLimitsCSS() {
+    buildLimitsCss() {
         return 'width:' + this.getLimits().x +'; height:' + this.getLimits().y  + ';';
     }
     

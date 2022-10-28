@@ -67,7 +67,9 @@ class App {
                 {
                     x : '340px',
                     y : '650px'
-                }
+                },
+                [],
+                {click : function(){console.log('attack')}}
             )
         ).addEnfant(
             // joueur1 -----------
@@ -104,7 +106,19 @@ class App {
                 {
                     x : '780px',
                     y : '670px'
-                }
+                },
+                {},
+                // {click : function(){console.log('attack')}}
+                {click : function(){
+                    this.setPosition({x: '291px' , y:'608px'})
+                    .getConteneur()
+                    .setAtr(
+                        'style',
+                        this.buildLimitsCss() + this.buildPositionCss()
+                    );
+                    // ajouter une classlist , et avec cette classe faire animation dans css
+                }}
+
             )
         )
         ;
