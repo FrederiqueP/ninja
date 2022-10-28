@@ -3,3 +3,26 @@
     background-color: #cccccc;
     background-size: cover;   
 }
+
+.joueur1tete {
+    background: url("../img/player1-head.png") no-repeat center center;
+
+}
+.joueur1corps {
+    background: url("../img/player1-body.png") no-repeat center center;
+
+}
+
+.joueur2tete {
+    background: url("../img/player2-head.png") no-repeat center center;
+}
+
+.joueur2corps {
+    background: url("../img/player2-body.png") no-repeat center center;
+
+}
+
+.etoileninja{
+    background: url("../img/shuriken.png") no-repeat center center;
+
+}
